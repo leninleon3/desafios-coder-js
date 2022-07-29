@@ -10,11 +10,14 @@ let carrito = 0;
     }
     
     function sumar () {
-        let compra = prompt ("ingrese su producto")
+        let compra = Number (prompt ("ingrese su producto"))
 
         if (compra === producto1 || compra === producto2 || compra === producto3 || compra === producto4 || compra === producto5){
 
-            carrito = compra * (21/100);
+            carrito = compra * (21/100) + compra;
+            alert ("su carrito es un total de " + carrito);
+
+            return compra;
 
         } else if (compra != producto1 || compra != producto2 || compra != producto3 || compra != producto4 || compra != producto5 ) {
             alert ("producto no encontrado");
