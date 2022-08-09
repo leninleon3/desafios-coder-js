@@ -44,14 +44,14 @@ for (let i=1; i<=8; i++){
         let compra = prompt ("ingrese su producto")
         let cantidad = Number (prompt ("ingrese la cantidad deseada"))
 
-        for (const carteras of productos) {
-        
+        let coincidencia = productos.find (e => {e.modelo === compra})
+
             if (cantidad > carteras.stock) {
             alert ("la cantidad solicitada excede nuestro stock actual");
-            break
+            
         }
                 
-        else if (compra === carteras.modelo){
+        else if (compra === coincidencia){
 
             carrito = cantidad * carteras.precio * 1.21;
             alert ("su carrito es un total de " + carrito);
@@ -61,12 +61,11 @@ for (let i=1; i<=8; i++){
 
             return compra;
 
-        } else if (compra != carteras.modelo) {
+        } else if (compra != coincidencia) {
             alert ("producto no encontrado")
-            break;
         }   
     }
-}
+
 
     iva ();
 
