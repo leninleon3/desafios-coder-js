@@ -36,6 +36,8 @@ productos.push (cartera8);
 
 
 
+
+
 for (let i=1; i<=8; i++){
         alert ("cartera " + i + " disponible");
     }
@@ -48,7 +50,7 @@ for (let i=1; i<=8; i++){
 
             if (cantidad > carteras.stock) {
             alert ("la cantidad solicitada excede nuestro stock actual");
-            
+
         }
                 
         else if (compra === coincidencia){
@@ -69,7 +71,15 @@ for (let i=1; i<=8; i++){
 
     iva ();
 
-    function stockRestante () {}
+    const excibicion = document.querySelector ("#seccionCarteras")
+const tempt = document.querySelector ("template")
+const cartaCartera = tempt.content.querySelector ("div")
+
+productos.forEach ((elm)=> {
+    let carteraClone = cartaCartera.cloneNode (cartaCartera, true);
+    excibicion.appendChild (carteraClone);
+})
+
 
 
     const modelosRestantes = productos.filter ((el) => el.modelo.includes ("modelo1"))
