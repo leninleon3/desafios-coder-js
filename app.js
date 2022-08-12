@@ -35,41 +35,63 @@ const cartera8 = new carteras ("modelo4", 80, 10);
 productos.push (cartera8);
 
 
+let ingresarCompra = document.querySelector ("#ingresarProductos");
+let ingresarModelo = document.querySelector ("#modelo");
+let ingresarCantidad = document.querySelector ("#cantidad");
 
+ingresarCompra.addEventListener ("submit", (e) => { e.preventDefault ()
+    let compra = ingresarModelo.value
+    let cantidad = ingresarCantidad.value
 
-
-for (let i=1; i<=8; i++){
-        alert ("cartera " + i + " disponible");
+    const carro = {
+    modelo: modelo,
+    cantidad: cantidad,
     }
+
+    if (compra.lenght > 7){
+        ingresarCompra.classList.add ("input-btn-danger")
+    }
+
+console.log (carro)})
+
+
+
+
+ // ***************** PRIMERA ENTREGA PROYECTO *****************
+
+
+//for (let i=1; i<=8; i++){
+//        alert ("cartera " + i + " disponible");
+    //  }
     
-    function iva () {
-        let compra = prompt ("ingrese su producto")
-        let cantidad = Number (prompt ("ingrese la cantidad deseada"))
+    //  function iva () {
+    //      let compra = prompt ("ingrese su producto")
+    //      let cantidad = Number (prompt ("ingrese la cantidad deseada"))
 
-        let coincidencia = productos.find (e => {e.modelo === compra})
+   //       let coincidencia = productos.find (e => {e.modelo === compra})
 
-            if (cantidad > carteras.stock) {
-            alert ("la cantidad solicitada excede nuestro stock actual");
+   //           if (cantidad > carteras.stock) {
+    //          alert ("la cantidad solicitada excede nuestro stock actual");
 
-        }
+   //       }
                 
-        else if (compra === coincidencia){
+    //      else if (coincidencia === true){
 
-            carrito = cantidad * carteras.precio * 1.21;
-            alert ("su carrito es un total de " + carrito);
+    //          carrito = cantidad * carteras.precio * 1.21;
+    //          alert ("su carrito es un total de " + carrito);
 
-            compra.stock - 1;
-
-
-            return compra;
-
-        } else if (compra != coincidencia) {
-            alert ("producto no encontrado")
-        }   
-    }
+    //          compra.stock - 1;
 
 
-    iva ();
+    //          return compra;
+
+    //      } else  {
+    //          alert ("producto no encontrado")
+   //       }   
+   //   }
+
+
+ //   iva ();
 
     const excibicion = document.querySelector ("#seccionCarteras")
 const tempt = document.querySelector ("template")
